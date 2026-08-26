@@ -89,9 +89,9 @@
     color:var(--accent); margin-bottom:16px;
   }
   h1{font-size:3.4rem; font-weight:600; margin-bottom:18px;}
-  .lede{font-size:1.22rem; color:var(--ink-soft); max-width:32em; margin-bottom:14px;}
+  .lede{font-size:1.08rem; color:var(--ink-soft); max-width:34em; margin-bottom:14px;}
   .lede strong{color:var(--ink); font-weight:600;}
-  .affil{color:var(--ink-soft); margin-bottom:26px; font-size:.97rem;}
+  .affil{color:var(--ink); margin-top:6px; margin-bottom:0; font-size:.97rem; font-weight:500;}
   .btn-row{display:flex; gap:14px; flex-wrap:wrap;}
   .btn{
     display:inline-block; padding:10px 20px; border-radius:6px; font-weight:600; font-size:.93rem;
@@ -100,7 +100,7 @@
   .btn:hover{background:var(--ink); color:var(--paper); text-decoration:none;}
   .btn.primary{background:var(--ink); color:var(--paper);}
   .btn.primary:hover{background:var(--ink-soft); border-color:var(--ink-soft);}
-  .trace{margin-top:34px; color:var(--ink-soft); opacity:.55;}
+  .trace{margin-top:26px; color:var(--ink-soft); opacity:.55;}
   .portrait img{border-radius:10px; box-shadow:var(--shadow); width:100%; height:auto;}
   .portrait figcaption{font-family:var(--mono); font-size:.78rem; color:var(--ink-soft); margin-top:10px; text-align:center; letter-spacing:.04em;}
 
@@ -198,13 +198,12 @@
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="kicker">Geodesy · Earthquake Physics · Subduction Zones</div>
+      <div class="kicker">Geodesy · Earthquake Physics · Tsunami · Bayesian Inversion</div>
       <h1>Zechao Zhuo</h1>
-      <p class="lede">I study <strong>how megathrust faults slip</strong>, during great earthquakes and in the months that follow, by combining GNSS, InSAR, ocean-bottom pressure, and satellite altimetry data in physics-based Bayesian inversions.</p>
+      <p class="lede">I model <strong>megathrust fault slip</strong> in a 3D heterogeneous spherical Earth using a Bayesian inversion framework.</p>
+      <p class="lede">I bring multiple datasets into the inversion: continuous and campaign GNSS, seafloor GNSS-A, InSAR, DART, and recently SWOT.</p>
+      <p class="lede">I use postseismic data to <strong>constrain the earthquake rupture itself</strong>, by jointly inverting the rupture together with its physics-driven postseismic processes: rate-strengthening afterslip and viscoelastic relaxation.</p>
       <p class="affil">Ph.D. Candidate, Department of Earth and Environmental Sciences,<br>Michigan State University · Advisor: Dr. Jeffrey Freymueller</p>
-      <div class="btn-row">
-        <a class="btn primary" href="mailto:zhuozech@msu.edu">Email me</a>
-      </div>
       <svg class="trace" width="420" height="36" viewBox="0 0 420 36" fill="none" aria-hidden="true" style="max-width:100%">
         <polyline points="0,18 60,18 70,16 80,20 90,17 100,19 110,18 130,18 138,6 144,32 150,2 156,30 162,10 170,24 180,14 190,21 202,16 216,19 232,17 250,18.5 270,17.5 295,18 330,18 420,18"
           stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
@@ -212,7 +211,7 @@
     </div>
     <figure class="portrait">
       <img src="zechao_field.jpg" alt="Zechao Zhuo operating a campaign GNSS station in front of snow-covered mountains">
-      <figcaption>CAMPAIGN GNSS · ALASKA</figcaption>
+      <figcaption>CAMPAIGN GNSS · KENAI PENINSULA · ALASKA</figcaption>
     </figure>
   </div>
 </header>
@@ -222,10 +221,8 @@
     <h2 class="sec-title">About</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>An earthquake is not over when the shaking stops. For months afterward the fault keeps slipping, the mantle keeps flowing, and every GNSS antenna, radar scene, and ocean sensor in the region keeps recording. Much of earthquake science treats these postseismic signals as a separate problem, to be modeled only after the rupture itself has been settled. My work starts from a different premise: the earthquake and its aftermath are one physical system, linked by stress, and if we model them together, each one sharpens what we know about the other.</p>
-        <p>The central obstacle in earthquake source studies is non-uniqueness. Many slip models can fit the same observations equally well, and the differences between them are often supplied by modeling assumptions rather than demanded by data. I treat that ambiguity as the object of study, not a nuisance to smooth away. I build Bayesian inversions in which the influence of every assumption is exposed and every dataset is asked what it can actually resolve — and when published models of the same earthquake disagree, I treat the disagreement itself as the research target, because it usually reveals something true about our methods.</p>
-        <p>This philosophy pays off in practice. The physics linking coseismic slip to stress-driven afterslip lets "contaminated" measurements that mix both signals, such as a campaign GPS network surveyed a year after a rupture or a seafloor site visited months later, become some of the most informative data available instead of being discarded or approximated. I have applied these joint inversions to the recent great earthquakes of the Alaska–Aleutian and Kamchatka subduction zones, using continuous, campaign, and seafloor GNSS, InSAR, DART ocean-bottom pressure records, and, for the 2025 Kamchatka event, the first two-dimensional tsunami image ever captured by the SWOT wide-swath altimeter.</p>
-        <p>I am a sixth-year Ph.D. candidate at Michigan State University, working with Dr. Jeffrey Freymueller. Before MSU, I earned my B.S. in Geophysics at the University of Science and Technology of China, where I worked with Dr. Yan Hu. And I don't only meet my data as numbers in a file: the photo above is from campaign GNSS fieldwork in Alaska.</p>
+        <p>An earthquake is not over when the shaking stops. For months afterward the fault keeps slipping, the mantle keeps flowing, and every GNSS antenna and radar scene in the region keeps recording. Much of earthquake science treats these postseismic signals as a separate problem, to be modeled only after the rupture itself has been settled. My work starts from a different premise: the earthquake and its aftermath are one physical system, linked by stress, and if we model them together, each one sharpens what we know about the other.</p>
+        <p>One of the central obstacles in earthquake source studies is non-uniqueness. Many slip models can fit the same observations equally well, and the differences between them are often supplied by modeling assumptions rather than demanded by data. I treat that ambiguity as a major object of study, not a nuisance to smooth away. I build Bayesian inversions in which the influence of every assumption is exposed and every dataset is asked what it can actually resolve. To accelerate the computation, I apply ensemble Kalman inversion and am working on neural surrogate models.</p>
       </div>
       <aside class="fact-card">
         <h3>Research interests</h3>
