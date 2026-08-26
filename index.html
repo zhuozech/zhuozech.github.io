@@ -108,6 +108,13 @@
   section{padding:64px 0;}
   .sec-title{font-size:2.1rem; font-weight:600; margin-bottom:8px;}
   .sec-sub{color:var(--ink-soft); margin-bottom:36px; max-width:46em;}
+  .journey{
+    max-width:46em; margin-bottom:44px; padding-left:22px;
+    border-left:3px solid var(--line);
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .journey .kicker{margin-bottom:0;}
+  .journey p{color:var(--ink-soft); font-size:.97rem;}
 
   /* about */
   .about-grid{display:grid; grid-template-columns:1.4fr .6fr; gap:48px;}
@@ -222,7 +229,7 @@
     <div class="about-grid">
       <div class="about-text">
         <p>An earthquake is not over when the shaking stops. For months afterward the fault keeps slipping, the mantle keeps flowing, and every GNSS antenna and radar scene in the region keeps recording. Much of earthquake science treats these postseismic signals as a separate problem, to be modeled only after the rupture itself has been settled. My work starts from a different premise: the earthquake and its aftermath are one physical system, linked by stress, and if we model them together, each one sharpens what we know about the other.</p>
-        <p>One of the central obstacles in earthquake source studies is non-uniqueness. Many slip models can fit the same observations equally well, and the differences between them are often supplied by modeling assumptions rather than demanded by data. I treat that ambiguity as a major object of study, not a nuisance to smooth away. I build Bayesian inversions in which the influence of every assumption is exposed and every dataset is asked what it can actually resolve. To accelerate the computation, I apply ensemble Kalman inversion and am working on neural surrogate models.</p>
+        <p>One of the central obstacles in earthquake source studies is non-uniqueness. Many slip models can fit the same observations equally well, and the differences between them are often supplied by modeling assumptions rather than demanded by data. I treat that ambiguity as a major object of study, not a nuisance to smooth away. I build Bayesian inversions in which the influence of every assumption is exposed and every dataset is asked what it can actually resolve. When the postseismic processes join the inversion, the problem becomes high-dimensional, time-dependent, and nonlinear; to accelerate the computation, I apply ensemble Kalman inversion and the No-U-Turn sampler, and am working on neural surrogate models.</p>
       </div>
       <aside class="fact-card">
         <h3>Research interests</h3>
@@ -241,7 +248,12 @@
 <section>
   <div class="wrap">
     <h2 class="sec-title">Research</h2>
-    <p class="sec-sub">Three connected projects trace one idea from proof of concept to a new class of inversion: postseismic deformation and tsunami observations do not just respond to an earthquake — they can constrain what the earthquake did.</p>
+    <div class="journey">
+      <div class="kicker">How this work began</div>
+      <p>My research began with a "can't fit." For my first project, I pulled a published coseismic slip model of the 2021 Mw 8.2 Chignik earthquake, computed the stress change it implied, and used that stress to drive afterslip — and found I could not explain the postseismic data satisfactorily. My advisor looked at the misfit and said: if you move the afterslip a bit closer to the trench, it will probably fit. But the way to move afterslip shallower is to move the down-dip edge of the coseismic slip shallower, and make its termination sharper. That is when I realized the two processes are coupled, and that I wanted to model them together.</p>
+      <p>In summer 2024 I spent three weeks with Dr. Junichi Fukuda at the Earthquake Research Institute, University of Tokyo, through the Sakura Science exchange program. There we decided to model afterslip together with coseismic slip, probing the fault slip, the heterogeneous fault frictional parameters, and the afterslip they generate simultaneously in a Bayesian framework using ensemble Kalman inversion — a method he was writing up at the time and has since published. That collaboration grew into the Simeonof joint inversion.</p>
+      <p>At SSA 2026 in Pasadena, I saw the first posters on the 2025 Mw 8.8 Kamchatka earthquake. The SWOT swath excited me, but I was puzzled about its real resolving power, and that of other datasets like DART. The pieces of an answer were already on my desk: my colleague Kai Wang had built beautiful Green's functions for this earthquake on a 3D spherical heterogeneous Earth, and I had taught myself GeoClaw in advance, out of suspicion about whether the GNSS-A observation at SEM1 near the Chignik rupture was actually coseismic, learning along the way that it can compute the dispersive wave problem. The Kamchatka project put all of it to work.</p>
+    </div>
 
     <article class="project">
       <div>
