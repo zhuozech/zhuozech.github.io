@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zechao Zhuo</title>
+<meta name="description" content="Zechao Zhuo is a Ph.D. candidate at Michigan State University studying megathrust earthquakes with GNSS, InSAR, tsunami, and SWOT observations.">
+<!-- PRE-LAUNCH: remove this noindex line when the site goes public -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f8f9;
+    --card:#ffffff;
+    --ink:#16222e;
+    --ink-soft:#4a5d6e;
+    --line:#d9e1e6;
+    --accent:#bf3b2b;
+    --accent-wash:#f7e9e6;
+    --sea:#1f6f8b;
+    --sea-wash:#e5eff3;
+    --shadow:0 12px 32px rgba(22,34,46,.16);
+    --display:"Newsreader", Georgia, "Times New Roman", serif;
+    --body:"IBM Plex Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0e161d;
+      --card:#15202a;
+      --ink:#e8eef2;
+      --ink-soft:#9fb3c2;
+      --line:#24323d;
+      --accent:#e06550;
+      --accent-wash:#3a231e;
+      --sea:#5ab3cc;
+      --sea-wash:#17303a;
+      --shadow:0 12px 32px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0e161d;
+    --card:#15202a;
+    --ink:#e8eef2;
+    --ink-soft:#9fb3c2;
+    --line:#24323d;
+    --accent:#e06550;
+    --accent-wash:#3a231e;
+    --sea:#5ab3cc;
+    --sea-wash:#17303a;
+    --shadow:0 12px 32px rgba(0,0,0,.5);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+  body{
+    font-family:var(--body); color:var(--ink); background:var(--paper);
+    line-height:1.65; font-size:16.5px;
+  }
+  h1,h2,h3{font-family:var(--display); color:var(--ink); line-height:1.15; text-wrap:balance;}
+  a{color:var(--sea); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1060px; margin:0 auto; padding:0 24px;}
+  .mono{font-family:var(--mono);}
+  .page{display:none;}
+  .page.active{display:block;}
+
+  /* nav */
+  nav{
+    position:sticky; top:0; z-index:50; background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; height:60px;}
+  .brand{font-family:var(--display); font-weight:700; font-size:1.2rem; color:var(--ink);}
+  .nav-links{display:flex; gap:26px; font-size:.93rem; font-weight:500;}
+  .nav-links a{color:var(--ink-soft);}
+  .nav-links a:hover{color:var(--accent); text-decoration:none;}
+  .nav-links a.current{color:var(--accent); font-weight:600;}
+
+  /* hero */
+  header.hero{padding:72px 0 60px; border-bottom:1px solid var(--line);}
+  .hero-grid{display:grid; grid-template-columns:1.25fr .75fr; gap:56px; align-items:center;}
+  .kicker{
+    font-family:var(--mono); font-size:.78rem; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--accent); margin-bottom:16px;
+  }
+  h1{font-size:3.4rem; font-weight:600; margin-bottom:18px;}
+  .lede{font-size:1.22rem; color:var(--ink-soft); max-width:32em; margin-bottom:14px;}
+  .lede strong{color:var(--ink); font-weight:600;}
+  .affil{color:var(--ink-soft); margin-bottom:26px; font-size:.97rem;}
+  .btn-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:10px 20px; border-radius:6px; font-weight:600; font-size:.93rem;
+    border:1.5px solid var(--ink); color:var(--ink); transition:background .15s,color .15s;
+  }
+  .btn:hover{background:var(--ink); color:var(--paper); text-decoration:none;}
+  .btn.primary{background:var(--ink); color:var(--paper);}
+  .btn.primary:hover{background:var(--ink-soft); border-color:var(--ink-soft);}
+  .trace{margin-top:34px; color:var(--ink-soft); opacity:.55;}
+  .portrait img{border-radius:10px; box-shadow:var(--shadow); width:100%; height:auto;}
+  .portrait figcaption{font-family:var(--mono); font-size:.78rem; color:var(--ink-soft); margin-top:10px; text-align:center; letter-spacing:.04em;}
+
+  /* sections */
+  section{padding:64px 0;}
+  .sec-title{font-size:2.1rem; font-weight:600; margin-bottom:8px;}
+  .sec-sub{color:var(--ink-soft); margin-bottom:36px; max-width:46em;}
+
+  /* about */
+  .about-grid{display:grid; grid-template-columns:1.4fr .6fr; gap:48px;}
+  .about-text{display:flex; flex-direction:column; gap:16px;}
+  .about-text p{max-width:46em;}
+  .fact-card{
+    background:var(--card); border:1px solid var(--line); border-radius:10px; padding:22px 24px;
+    font-size:.92rem; height:fit-content;
+  }
+  .fact-card h3{font-size:1.05rem; margin-bottom:12px;}
+  .fact-card ul{list-style:none;}
+  .fact-card li{padding:8px 0; border-top:1px solid var(--line);}
+  .fact-card li:first-child{border-top:none;}
+  .fact-card .tag{font-family:var(--mono); color:var(--accent); display:block; font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:2px;}
+
+  /* research */
+  .project{
+    display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:34px; margin-bottom:34px;
+  }
+  .project figure img{border-radius:6px; border:1px solid var(--line); background:#fff;}
+  .project figure figcaption{font-size:.82rem; color:var(--ink-soft); margin-top:10px;}
+  .event-tag{
+    font-family:var(--mono); font-size:.76rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--accent); display:block; margin-bottom:10px;
+  }
+  .project h3{font-size:1.45rem; font-weight:600; margin-bottom:14px;}
+  .project p{color:var(--ink); margin-bottom:12px; font-size:.97rem;}
+  .badge{
+    display:inline-block; font-family:var(--mono); font-size:.72rem; font-weight:500; letter-spacing:.06em;
+    text-transform:uppercase; padding:4px 12px; border-radius:999px; margin-bottom:12px;
+  }
+  .badge.pub{background:var(--sea-wash); color:var(--sea);}
+  .badge.prep{background:var(--accent-wash); color:var(--accent);}
+  .proj-links{font-size:.93rem; font-weight:600;}
+
+  /* publications */
+  .pub-group{font-family:var(--mono); font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin:30px 0 6px;}
+  .pub-group:first-of-type{margin-top:0;}
+  .pub-list{list-style:none; max-width:52em;}
+  .pub-list li{padding:18px 0; border-top:1px solid var(--line);}
+  .pub-list li:first-child{border-top:none;}
+  .pub-list .title{font-weight:600; color:var(--ink);}
+  .pub-list .meta{color:var(--ink-soft); font-size:.92rem; margin-top:4px;}
+
+  /* cv */
+  .cv-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  .cv-block h3{font-size:1.2rem; margin-bottom:16px;}
+  .cv-item{margin-bottom:16px;}
+  .cv-item .when{font-family:var(--mono); font-size:.76rem; color:var(--accent); letter-spacing:.06em;}
+  .cv-item .what{font-weight:600;}
+  .cv-item .where{color:var(--ink-soft); font-size:.92rem;}
+  .cv-list{list-style:none; font-size:.94rem;}
+  .cv-list li{padding:6px 0 6px 18px; position:relative;}
+  .cv-list li::before{content:"–"; position:absolute; left:0; color:var(--accent);}
+
+  /* contact + footer */
+  .big-mail{font-family:var(--display); font-size:1.5rem; font-weight:600;}
+  .contact-note{color:var(--ink-soft); margin-top:8px;}
+  footer{padding:36px 0 48px; color:var(--ink-soft); font-size:.85rem;}
+
+  @media (max-width: 820px){
+    h1{font-size:2.4rem;}
+    .hero-grid,.about-grid,.project,.cv-grid{grid-template-columns:1fr; gap:28px;}
+    .portrait{max-width:380px; margin:0 auto;}
+    .nav-links{gap:14px; font-size:.85rem;}
+    section{padding:48px 0;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="brand">Zechao Zhuo</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page active" id="home">
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Geodesy · Earthquake Physics · Subduction Zones</div>
+      <h1>Zechao Zhuo</h1>
+      <p class="lede">I study <strong>how megathrust faults slip</strong>, during great earthquakes and in the months that follow, by combining GNSS, InSAR, ocean-bottom pressure, and satellite altimetry data in physics-based Bayesian inversions.</p>
+      <p class="affil">Ph.D. Candidate, Department of Earth and Environmental Sciences,<br>Michigan State University · Advisor: Dr. Jeffrey Freymueller</p>
+      <div class="btn-row">
+        <a class="btn primary" href="mailto:zhuozech@msu.edu">Email me</a>
+        <a class="btn" href="Zechao_Zhuo_CV.docx">Download CV</a>
+      </div>
+      <svg class="trace" width="420" height="36" viewBox="0 0 420 36" fill="none" aria-hidden="true" style="max-width:100%">
+        <polyline points="0,18 60,18 70,16 80,20 90,17 100,19 110,18 130,18 138,6 144,32 150,2 156,30 162,10 170,24 180,14 190,21 202,16 216,19 232,17 250,18.5 270,17.5 295,18 330,18 420,18"
+          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <figure class="portrait">
+      <img src="zechao_field.jpg" alt="Zechao Zhuo operating a campaign GNSS station in front of snow-covered mountains">
+      <figcaption>CAMPAIGN GNSS · ALASKA</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2 class="sec-title">About</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am a sixth-year Ph.D. candidate working with Dr. Jeffrey Freymueller at Michigan State University. Before MSU, I earned my B.S. in Geophysics at the University of Science and Technology of China, where I worked with Dr. Yan Hu.</p>
+        <p>My research asks a simple question with hard answers: <em>where, and how much, does a fault really slip in a great earthquake?</em> Coseismic slip inversions are famously non-unique, so I develop methods that bring in the physics linking an earthquake to its aftermath, stress-driven afterslip and viscoelastic relaxation, to let postseismic observations constrain the rupture itself. Embedded in Bayesian frameworks, these joint inversions produce sharper slip models with honest uncertainties, and they turn "leftover" mixed-signal data into some of the most informative observations available.</p>
+        <p>I apply these methods to the recent great earthquakes of the Alaska–Aleutian and Kamchatka subduction zones, using continuous, campaign, and seafloor GNSS, InSAR, DART ocean-bottom pressure records, and, for the 2025 Kamchatka event, the first two-dimensional tsunami image ever captured by the SWOT wide-swath altimeter.</p>
+      </div>
+      <aside class="fact-card">
+        <h3>Research interests</h3>
+        <ul>
+          <li><span class="tag">Processes</span>Earthquake cycle deformation · megathrust friction &amp; rheology · afterslip and viscoelastic relaxation</li>
+          <li><span class="tag">Methods</span>Bayesian joint inversion · finite-element Green's functions · tsunami modeling</li>
+          <li><span class="tag">Data</span>GNSS (continuous, campaign, seafloor) · InSAR · DART · SWOT altimetry</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="page" id="research">
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">Research</h2>
+    <p class="sec-sub">Three connected projects trace one idea from proof of concept to a new class of inversion: postseismic deformation and tsunami observations do not just respond to an earthquake — they can constrain what the earthquake did.</p>
+
+    <article class="project">
+      <div>
+        <span class="event-tag">2025 · Mw 8.8 · Kamchatka</span>
+        <span class="badge prep">Manuscript in preparation</span>
+        <h3>Localized trench breaching in the 2025 Kamchatka earthquake</h3>
+        <p>The 2025 Kamchatka earthquake is the first great megathrust rupture observed by the SWOT wide-swath altimeter, yet published source models disagree on whether slip breached the trench. We jointly invert GNSS, InSAR, DART, and SWOT data in a hierarchical Bayesian framework, on finite-element Green's functions with trench-daylighting fault geometry.</p>
+        <p>The result reconciles the disagreement: the rupture breached the trench along a single localized segment (51.2–52°N), with near-zero shallow slip elsewhere. The tsunami data constrain the <em>location</em> of shallow slip far better than its amplitude.</p>
+      </div>
+      <figure>
+        <img src="kamchatka_fig1.jpg" alt="Map of the 2025 Kamchatka earthquake showing SWOT tsunami observations, slip model, GNSS stations and DART buoys">
+        <figcaption>Coseismic slip and the tsunami wave train imaged by SWOT track 267, about 70 minutes after rupture.</figcaption>
+      </figure>
+    </article>
+
+    <article class="project">
+      <figure>
+        <img src="simeonof_fig1.jpg" alt="Coseismic slip model of the 2020 Simeonof earthquake with velocity-strengthening barriers">
+        <figcaption>Joint coseismic–postseismic slip model and the two velocity-strengthening barriers bounding the rupture.</figcaption>
+      </figure>
+      <div>
+        <span class="event-tag">2020 · Mw 7.8 · Simeonof</span>
+        <span class="badge prep">Manuscript in preparation</span>
+        <h3>A stress-coupled joint inversion for the Simeonof earthquake</h3>
+        <p>Afterslip is driven by the stresses the mainshock imposed, so postseismic observations should constrain the rupture, not merely respond to it. We built a joint inversion that simultaneously solves for coseismic slip and its physics-driven afterslip in a Bayesian framework, applied to one year of data spanning tsunami waveforms, continuous and campaign GNSS, InSAR, and a seafloor GNSS-Acoustic site.</p>
+        <p>The joint model yields a more compact rupture than coseismic-only inversions and exposes two velocity-strengthening barriers of contrasting frictional strength — including the barrier that separated the Simeonof rupture from the 2021 Mw 8.2 Chignik earthquake next door.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div>
+        <span class="event-tag">2021 · Mw 8.2 · Chignik</span>
+        <span class="badge pub">Published · JGR Solid Earth (2025)</span>
+        <h3>Postseismic deformation constrains the coseismic slip of the Chignik earthquake</h3>
+        <p>Published coseismic slip models for the Chignik earthquake fit the coseismic data equally well yet disagree on where slip ended down-dip. We inverted a suite of coseismic models differing only in rupture extent, then tested how well each predicts the first three months of postseismic GNSS displacements through stress-driven afterslip modeling.</p>
+        <p>Only a compact rupture terminating abruptly ~130 km from the trench can generate the observed afterslip pattern, and matching the 3D displacements requires viscoelastic relaxation alongside afterslip — early postseismic data provide a genuine, independent constraint on coseismic slip.</p>
+        <p class="proj-links"><a href="https://doi.org/10.1029/2024JB030401">Read the paper →</a></p>
+      </div>
+      <figure>
+        <img src="chignik_fig.jpg" alt="Slip and afterslip averaged along strike versus distance from trench for coseismic models of the Chignik earthquake">
+        <figcaption>Coseismic slip models with different down-dip extents (top) and the afterslip each one predicts (bottom).</figcaption>
+      </figure>
+    </article>
+  </div>
+</section>
+</div>
+
+<div class="page" id="publications">
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">Publications</h2>
+    <div class="pub-group">Peer-reviewed</div>
+    <ul class="pub-list">
+      <li>
+        <div class="title">The First Three Months of Postseismic Deformation of the 29 July 2021 Mw 8.2 Chignik Earthquake Provides New Constraints on the Down-Dip Extent of Coseismic Slip</div>
+        <div class="meta"><strong>Zhuo, Z.</strong>, Freymueller, J. T., Xiao, Z., Elliott, J., &amp; Grapenthin, R. (2025). <em>JGR: Solid Earth</em>, 130, e2024JB030401. <a href="https://doi.org/10.1029/2024JB030401">doi:10.1029/2024JB030401</a></div>
+      </li>
+    </ul>
+    <div class="pub-group">In preparation</div>
+    <ul class="pub-list">
+      <li>
+        <div class="title">Illuminating the Slip Behavior of the Alaska Megathrust Using a Joint Coseismic–Postseismic Inversion for the 2020 Mw 7.8 Simeonof Earthquake</div>
+        <div class="meta"><strong>Zhuo, Z.</strong> and coauthors — manuscript in preparation.</div>
+      </li>
+      <li>
+        <div class="title">Localized Trench Breaching in the 2025 Mw 8.8 Kamchatka Earthquake from Bayesian Joint Inversion of SWOT, DART, and Geodetic Data</div>
+        <div class="meta"><strong>Zhuo, Z.</strong> and coauthors — manuscript in preparation.</div>
+      </li>
+    </ul>
+  </div>
+</section>
+</div>
+
+<div class="page" id="cv">
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">Curriculum Vitae</h2>
+    <p class="sec-sub">A condensed view — the full CV is available <a href="Zechao_Zhuo_CV.docx">here</a>.</p>
+    <div class="cv-grid">
+      <div class="cv-block">
+        <h3>Education</h3>
+        <div class="cv-item">
+          <div class="when">2020 — PRESENT</div>
+          <div class="what">Ph.D. Candidate, Earth and Environmental Sciences</div>
+          <div class="where">Michigan State University · Advisor: Dr. Jeffrey Freymueller</div>
+        </div>
+        <div class="cv-item">
+          <div class="when">2016 — 2020</div>
+          <div class="what">B.S. in Geophysics</div>
+          <div class="where">University of Science and Technology of China · Advisor: Dr. Yan Hu</div>
+        </div>
+        <h3 style="margin-top:28px;">Awards</h3>
+        <div class="cv-item">
+          <div class="when">2023</div>
+          <div class="what">Pringle Academic Achievement Scholarship</div>
+          <div class="where">Michigan State University</div>
+        </div>
+      </div>
+      <div class="cv-block">
+        <h3>Selected meetings &amp; workshops</h3>
+        <ul class="cv-list">
+          <li>Sakura Science Program, Earthquake Research Institute, University of Tokyo (2024)</li>
+          <li>Seismological Society of America Annual Meeting, Anchorage (2024)</li>
+          <li>CIDER Workshop, UC Berkeley (2023)</li>
+          <li>CIG Crustal Deformation Workshop &amp; PyLith Hackathon, Colorado School of Mines (2022, 2023)</li>
+          <li>GAGE/SAGE Community Science Workshop, Pasadena (2023)</li>
+          <li>AGU Fall Meeting, Chicago (2022) &amp; San Francisco (2023)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="page" id="contact">
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">Contact</h2>
+    <div class="big-mail"><a href="mailto:zhuozech@msu.edu">zhuozech@msu.edu</a></div>
+    <p class="contact-note">Department of Earth and Environmental Sciences<br>Michigan State University, East Lansing, MI</p>
+  </div>
+</section>
+</div>
+
+<footer>
+  <div class="wrap">© 2026 Zechao Zhuo · Figures from my published and in-preparation work · Built with plain HTML, no trackers.</div>
+</footer>
+
+<script>
+(function(){
+  var pages = Array.prototype.slice.call(document.querySelectorAll('.page'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  function show(id){
+    var el = document.getElementById(id);
+    if(!el || el.className.indexOf('page') === -1) id = 'home';
+    pages.forEach(function(p){ p.classList.toggle('active', p.id === id); });
+    links.forEach(function(a){ a.classList.toggle('current', a.getAttribute('href') === '#' + id); });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', function(){ show(location.hash.replace('#','')); });
+  show(location.hash.replace('#','') || 'home');
+})();
+</script>
+
+</body>
+</html>
