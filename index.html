@@ -374,7 +374,7 @@
 </div>
 
 <footer>
-  <div class="wrap">© 2026 Zechao Zhuo · Figures from my published and in-preparation work · Built with plain HTML, no trackers.</div>
+  <div class="wrap">© 2026 Zechao Zhuo · Figures from my published and in-preparation work · Built with plain HTML · privacy-friendly analytics, no cookies.</div>
 </footer>
 
 <script>
@@ -391,6 +391,14 @@
   window.addEventListener('hashchange', function(){ show(location.hash.replace('#','')); });
   show(location.hash.replace('#','') || 'home');
 })();
+</script>
+
+<script data-goatcounter="https://zhuozech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+window.addEventListener('hashchange', function(){
+  if (window.goatcounter && window.goatcounter.count)
+    window.goatcounter.count({ path: location.pathname + location.hash });
+});
 </script>
 
 </body>
