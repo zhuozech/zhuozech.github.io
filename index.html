@@ -149,6 +149,9 @@
   .badge.pub{background:var(--sea-wash); color:var(--sea);}
   .badge.prep{background:var(--accent-wash); color:var(--accent);}
   .proj-links{font-size:.93rem; font-weight:600;}
+  .wide-media{grid-column:1 / -1; margin-top:8px;}
+  .wide-media video{width:100%; display:block; border-radius:6px; border:1px solid var(--line); background:#0b0f14;}
+  .wide-media figcaption{font-size:.82rem; color:var(--ink-soft); margin-top:10px;}
 
   /* publications */
   .pub-group{font-family:var(--mono); font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin:30px 0 6px;}
@@ -264,6 +267,12 @@
       <figure>
         <img src="kamchatka_fig1.jpg" alt="Map of the 2025 Kamchatka earthquake showing SWOT tsunami observations, slip model, GNSS stations and DART buoys">
         <figcaption>Coseismic slip and SWOT track 267, about 70 minutes after rupture.</figcaption>
+      </figure>
+      <figure class="wide-media">
+        <video autoplay loop muted playsinline poster="kamchatka_tsunami_poster.jpg">
+          <source src="kamchatka_tsunami.mp4" type="video/mp4">
+        </video>
+        <figcaption>How SWOT saw the Kamchatka tsunami: modeled propagation compared against the SWOT image and DART buoy records, 150&times; real time.</figcaption>
       </figure>
     </article>
 
