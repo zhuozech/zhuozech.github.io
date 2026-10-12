@@ -67,6 +67,7 @@
   .page{display:none;}
   .page.active{display:block;}
 
+  .page{scroll-margin-top:400px;}   /* direct links like #resources open at the top, not under the sticky menu */
   /* nav */
   nav{
     position:sticky; top:0; z-index:50; background:var(--paper);
@@ -182,7 +183,9 @@
     h1{font-size:2.4rem;}
     .hero-grid,.about-grid,.project,.cv-grid{grid-template-columns:1fr; gap:28px;}
     .portrait{max-width:380px; margin:0 auto;}
-    .nav-links{gap:14px; font-size:.85rem;}
+    .nav-inner{height:auto; flex-direction:column; align-items:flex-start; gap:6px; padding-top:10px; padding-bottom:10px;}
+    .brand{white-space:nowrap;}
+    .nav-links{flex-wrap:wrap; gap:6px 16px; font-size:.85rem;}
     section{padding:48px 0;}
   }
 </style>
