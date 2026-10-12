@@ -197,6 +197,7 @@
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#cv">CV</a>
+      <a href="#resources">Resources</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -368,6 +369,60 @@
         </ul>
       </div>
     </div>
+  </div>
+</section>
+</div>
+
+<div class="page" id="resources">
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">Resources</h2>
+    <div class="pub-group">Open course</div>
+    <ul class="pub-list">
+      <li>
+        <div class="title">Empiricist Geophysics: Data, Models, and Bayesian Inference</div>
+        <div class="meta">The notebooks I keep to refresh my own thinking and to build my own map of how data, models and
+        inference fit together in geophysics. I share them as an open course for students and researchers new to
+        inversion, Bayesian statistics, or the forward models of geophysics (earthquake science). Each idea is shown on a small problem whose answer is known, each method is actually run,
+        and every figure comes from that run. Python notebooks that run on a laptop, plus an interactive sampler
+        playground in the browser.</div>
+        <div class="btn-row" style="margin-top:14px">
+          <a class="btn primary" href="https://zhuozech.github.io/empiricist-geophysics/">Open the course</a>
+          <a class="btn" href="https://github.com/zhuozech/empiricist-geophysics">Source code on GitHub</a>
+          <a class="btn" href="https://zhuozech.github.io/empiricist-geophysics/playground.html">Sampler playground</a>
+        </div>
+      </li>
+    </ul>
+    <div class="pub-group">What it covers</div>
+    <ul class="pub-list">
+      <li>
+        <div class="title">1 · Geophysical forward problems and numerical methods <span class="meta">(planned)</span></div>
+        <div class="meta">Elastic dislocation models (Okada half-space solutions, triangular dislocations, layered Earth
+        models) and how the Green's-function matrix of a slip inversion is built; finite-difference, finite-element and
+        boundary-element methods, fault meshing and mesh-refinement checks; earthquake-cycle and postseismic processes
+        (interseismic locking, rate-and-state friction, stress-driven afterslip, viscoelastic relaxation in Maxwell and
+        Burgers materials, power-law flow laws, poroelastic rebound); tsunami modelling (initial sea surface from seafloor
+        deformation, shallow-water and Boussinesq equations, adaptive mesh refinement, tsunami Green's functions);
+        seismic waves (synthetic seismograms, kinematic rupture models, back projection).</div>
+      </li>
+      <li>
+        <div class="title"><a href="https://zhuozech.github.io/empiricist-geophysics/html/2-01_basics.html">2 · Inverse problems and Bayesian inversion</a> <span class="meta">(33 notebooks)</span></div>
+        <div class="meta">Least squares and regularisation, priors and data weighting, Bayesian inference from first
+        principles, MCMC and ensemble Kalman methods, hierarchical Bayes, and checking a posterior.</div>
+      </li>
+      <li>
+        <div class="title"><a href="https://zhuozech.github.io/empiricist-geophysics/html/3-01_surrogates_101.html">3 · Forward surrogate models</a> <span class="meta">(7 notebooks, under development)</span></div>
+        <div class="meta">Neural networks, physics-informed networks, Gaussian-process emulators, neural operators,
+        reduced-order models, and inference with surrogates.</div>
+      </li>
+      <li>
+        <div class="title">4 · Data and data processing <span class="meta">(planned)</span></div>
+        <div class="meta">GNSS (daily and high-rate); InSAR, including Sentinel-1, ALOS-2 and NISAR; seafloor and ocean
+        observations (DART buoys, cabled networks such as S-net along the Japan Trench, ocean-bottom and differential
+        pressure gauges, GNSS-acoustic positioning, tide gauges); SWOT and nadir satellite altimetry; teleseismic and
+        strong-motion seismic data; and how each data type's noise becomes the data covariance.</div>
+      </li>
+    </ul>
   </div>
 </section>
 </div>
