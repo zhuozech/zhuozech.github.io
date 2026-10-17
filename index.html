@@ -153,6 +153,11 @@
   .wide-media{grid-column:1 / -1; margin-top:8px;}
   .wide-media video{width:100%; display:block; border-radius:6px; border:1px solid var(--line); background:#0b0f14;}
   .wide-media figcaption{font-size:.82rem; color:var(--ink-soft); margin-top:10px;}
+  .map-media{margin-top:24px;}
+  .map-media a{display:block; border-radius:8px; overflow:hidden; border:1px solid var(--line); background:#0a0c14;}
+  .map-media a:hover{border-color:var(--ink-soft);}
+  .map-media video{width:100%; aspect-ratio:16 / 9; display:block;}
+  .map-media figcaption{font-size:.82rem; color:var(--ink-soft); margin-top:10px;}
 
   /* publications */
   .pub-group{font-family:var(--mono); font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin:30px 0 6px;}
@@ -393,9 +398,19 @@
         The course will continue to evolve as my understanding of the subject grows and changes.</div>
         <div class="btn-row" style="margin-top:14px">
           <a class="btn primary" href="https://zhuozech.github.io/empiricist-geophysics/">Open the course</a>
+          <a class="btn" href="https://zhuozech.github.io/empiricist-geophysics/html/knowledge-map.html">Knowledge map</a>
           <a class="btn" href="https://github.com/zhuozech/empiricist-geophysics">Source code on GitHub</a>
           <a class="btn" href="https://zhuozech.github.io/empiricist-geophysics/playground.html">Sampler playground</a>
         </div>
+        <figure class="map-media">
+          <a href="https://zhuozech.github.io/empiricist-geophysics/html/knowledge-map.html">
+            <video muted loop playsinline preload="none" poster="knowledge_map_poster.jpg"
+              aria-label="Animation of the 3-D knowledge map: the map grows, then an idea is opened and every idea it builds on lights up">
+              <source src="knowledge_map.mp4" type="video/mp4">
+            </video>
+          </a>
+          <figcaption>Knowledge map of Topic 2: 223 ideas in 3-D, with height as reading order and colour as the section. Open it and click any idea to light up everything it builds on.</figcaption>
+        </figure>
       </li>
     </ul>
     <div class="pub-group">What it covers</div>
@@ -459,6 +474,19 @@
   }
   window.addEventListener('hashchange', function(){ show(location.hash.replace('#','')); });
   show(location.hash.replace('#','') || 'home');
+})();
+</script>
+
+<script>
+(function(){   /* knowledge-map animation: plays only while it is on screen, and never with reduced motion */
+  var v = document.querySelector('.map-media video');
+  if (!v || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function(){}); } else { v.pause(); }
+    });
+  }, {threshold: 0.25}).observe(v);
 })();
 </script>
 
